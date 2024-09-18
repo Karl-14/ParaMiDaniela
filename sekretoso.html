@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio Amoroso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe6e6;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            width: 70%; /* Ajustar el ancho según sea necesario (60% - 80%) */
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #ff99cc;
+            padding: 20px;
+            color: white;
+            font-size: 2em;
+            border-bottom: 5px solid #ff66b2;
+        }
+        .photos {
+            margin-bottom: 40px; /* Espacio abajo de las fotos */
+        }
+        .photos img, .photos video {
+            border-radius: 10px;
+            width: 100%;
+            max-width: 300px; /* Limita el tamaño de las imágenes */
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 5px solid #ff66b2; /* Marco rosado */
+            display: block;
+            margin: 20px auto; /* Separación vertical entre las imágenes */
+        }
+        .photos video {
+            position: relative;
+        }
+        .photos .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ff66b2;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            display: none; /* Ocultar botón por defecto */
+        }
+        .photos video:hover .play-button {
+            display: block; /* Mostrar botón al pasar el ratón sobre el video */
+        }
+        .audio-player {
+            margin: 40px auto; /* Más espacio arriba y abajo */
+            max-width: 600px; /* Limita el tamaño del reproductor de audio */
+        }
+        .audio-player audio {
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Sekretoso
+    </header>
+    <div class="container">
+        <div class="photos">
+            <img src="https://www.dropbox.com/scl/fi/phjk3kr7d5d6szhqkb5ko/1726652121556.jpg?rlkey=asqxe2p7a0qiaqeajb4wmq6ne&st=opgraz8v&dl=1" alt="Foto 1">
+            <div class="video-container">
+                <video width="300" height="200" controls>
+                    <source src="https://www.dropbox.com/scl/fi/6twp96o9ovdrdu0342wbf/lv_0_20240918022942.mp4?rlkey=f1wvqhf87rz6yqgts6zglw49r&st=y4u2iard&dl=1" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                <button class="play-button">►</button>
+            </div>
+        </div>
+        <div class="audio-player">
+            <audio controls>
+                <source src="https://www.dropbox.com/scl/fi/0ob8qltaszdbs9szgpcyf/PTT-20240918-WA0002.mp3?rlkey=izmztdkh4e7md86t3v6wqp913&st=ziv5ytg5&dl=1" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <audio controls>
+                <source src="https://www.dropbox.com/scl/fi/kjwo5lqsyddzs4w7np4qq/ayuda.mp3?rlkey=uufqlaxsb5awxr4617m55ahra&st=73tuaygr&dl=1" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+    </div>
+</body>
+</html>

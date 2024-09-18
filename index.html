@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pa' mi Kendra</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #ffcccc;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            color: #cc0000;
+            margin: 0;
+            font-size: 36px;
+            text-align: right;
+            flex-grow: 1;
+        }
+        #audio-player {
+            margin-right: auto;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        section p {
+            font-size: 18px;
+            color: #cc0066;
+            text-align: center;
+        }
+        .button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #ff99cc;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #ff66b2;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #ffcccc;
+            padding: 10px;
+            text-align: center;
+            color: #660033;
+        }
+        #welcome-message {
+            text-align: center;
+            font-size: 16px;
+            color: #ff0066;
+            margin-bottom: 10px;
+        }
+        /* Estilo para la ventana de contraseña */
+        #password-modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        #password-modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #password-modal-content input {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        #password-modal-content button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #ff99cc;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        #password-modal-content button:hover {
+            background-color: #ff66b2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Mensaje de bienvenida -->
+    <div id="welcome-message">
+        Dale play a la musiquita, bebé. 
+    </div>
+
+    <header>
+        <!-- Reproductor de audio -->
+        <audio id="audio-player" controls>
+            <source src="https://www.dropbox.com/scl/fi/gwl5s66de01yp271utttb/canela1.mp3?rlkey=dz5v5ieufa4soky1x5bij66ja&st=3bthzp7f&dl=1" type="audio/mpeg">
+            Tu navegador no soporta el reproductor de audio.
+        </audio>
+
+        <!-- T&iacute;tulo del sitio -->
+        <h1>Pa' mi Kendrita</h1>
+    </header>
+
+    <section>
+        <p>Mi amor,
+
+desde que hablo contigo , estoy más feli poque me haces sentir feliz JAJAJAJA A. Eres la nena mash linda que me hace tar feliz muchote tiempo No hay palabras suficientes para describir cuánto te quiero y cuánto significas para mí. Eres mi corazoncito, mi amor, mi nena, mi niña, mi princesa y mi esposita linda. 💗
+
+ Eres linda, guapa y hermosa, no solo por fuera, sino también por dentro. Siempre querré estar a tu ladito, sin importar lo que pase. Te amo 💗
+</p>
+
+        <!-- Bot&oacute;n al archivo yo.html -->
+        <button class="button" onclick="location.href='yo.html'">Bechitos<3</button>
+
+        <!-- Imagen asociada al bot&oacute;n 1 -->
+        <div class="image-container">
+            <img src="https://www.dropbox.com/scl/fi/0f5y9r4l56stngu3y1dnk/IMG_20240918_002248.jpg?rlkey=178z3ylb92ju2nsa2opi7asq0&st=t616p7z6&dl=1" alt="Imagen 1">
+        </div>
+
+        <!-- Bot&oacute;n al archivo sekretoso.html -->
+        <button class="button" onclick="openPasswordModal()">sekretoso</button>
+
+        <!-- Imagen asociada al bot&oacute;n 2 -->
+        <div class="image-container">
+            <img src="https://www.dropbox.com/scl/fi/bs9lzkh1nq5wvwgowm9z4/IMG_20240918_002305.jpg?rlkey=x5x42ruwqny6mwv9xv0fbfnfc&st=eyyyhj5a&dl=1" alt="Imagen 2">
+        </div>
+
+        <!-- Bot&oacute;n al archivo boton.html -->
+        <button class="button" onclick="location.href='boton.html'">Fotitos pa' ti</button>
+
+        <!-- Imagen asociada al bot&oacute;n 3 -->
+        <div class="image-container">
+            <img src="https://www.dropbox.com/scl/fi/1cra1fuc3xnzi416fdikn/IMG_20240918_002317.jpg?rlkey=1xunjk6x6pj73rwbdhbmp30pa&st=y61sm28u&dl=1" alt="Imagen 3">
+        </div>
+    </section>
+
+    <footer>
+        <p>Te amo mucho.</p>
+    </footer>
+
+    <!-- Modal de contraseña -->
+    <div id="password-modal">
+        <div id="password-modal-content">
+            <p>Convenceme JAJJAJA:</p>
+            <input type="password" id="password-input" placeholder="Contraseña">
+            <button onclick="checkPassword()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        function openPasswordModal() {
+            document.getElementById('password-modal').style.display = 'flex';
+        }
+
+        function checkPassword() {
+            const input = document.getElementById('password-input').value;
+            if (input === 'te amo') {
+                location.href = 'sekretoso.html';
+            } else {
+                alert('Contraseña incorrecta. Inténtalo de nuevo.');
+            }
+        }
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('password-modal')) {
+                document.getElementById('password-modal').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
