@@ -81,8 +81,8 @@
             color: #ff0066;
             margin-bottom: 10px;
         }
-        /* Estilo para la ventana de contraseña */
-        #password-modal {
+        /* Estilo para la ventana de problema matemático */
+        #math-modal {
             display: none;
             position: fixed;
             left: 0;
@@ -93,18 +93,18 @@
             justify-content: center;
             align-items: center;
         }
-        #password-modal-content {
+        #math-modal-content {
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
         }
-        #password-modal-content input {
+        #math-modal-content input {
             padding: 10px;
             font-size: 16px;
             margin-top: 10px;
         }
-        #password-modal-content button {
+        #math-modal-content button {
             margin-top: 10px;
             padding: 10px;
             background-color: #ff99cc;
@@ -113,7 +113,7 @@
             color: white;
             cursor: pointer;
         }
-        #password-modal-content button:hover {
+        #math-modal-content button:hover {
             background-color: #ff66b2;
         }
     </style>
@@ -143,26 +143,26 @@ desde que hablo contigo , estoy más feli poque me haces sentir feliz JAJAJAJA A
  Eres linda, guapa y hermosa, no solo por fuera, sino también por dentro. Siempre querré estar a tu ladito, sin importar lo que pase. Te amo 💗
 </p>
 
-        <!-- Bot&oacute;n al archivo yo.html -->
+        <!-- Botón al archivo yo.html -->
         <button class="button" onclick="location.href='yo.html'">Bechitos<3</button>
 
-        <!-- Imagen asociada al bot&oacute;n 1 -->
+        <!-- Imagen asociada al botón 1 -->
         <div class="image-container">
             <img src="https://www.dropbox.com/scl/fi/0f5y9r4l56stngu3y1dnk/IMG_20240918_002248.jpg?rlkey=178z3ylb92ju2nsa2opi7asq0&st=t616p7z6&dl=1" alt="Imagen 1">
         </div>
 
-        <!-- Bot&oacute;n al archivo sekretoso.html -->
-        <button class="button" onclick="openPasswordModal()">sekretoso</button>
+        <!-- Botón para resolver problema matemático -->
+        <button class="button" onclick="openMathModal()">Sekretoso</button>
 
-        <!-- Imagen asociada al bot&oacute;n 2 -->
+        <!-- Imagen asociada al botón 2 -->
         <div class="image-container">
             <img src="https://www.dropbox.com/scl/fi/bs9lzkh1nq5wvwgowm9z4/IMG_20240918_002305.jpg?rlkey=x5x42ruwqny6mwv9xv0fbfnfc&st=eyyyhj5a&dl=1" alt="Imagen 2">
         </div>
 
-        <!-- Bot&oacute;n al archivo boton.html -->
+        <!-- Botón al archivo boton.html -->
         <button class="button" onclick="location.href='boton.html'">Fotitos pa' ti</button>
 
-        <!-- Imagen asociada al bot&oacute;n 3 -->
+        <!-- Imagen asociada al botón 3 -->
         <div class="image-container">
             <img src="https://www.dropbox.com/scl/fi/1cra1fuc3xnzi416fdikn/IMG_20240918_002317.jpg?rlkey=1xunjk6x6pj73rwbdhbmp30pa&st=y61sm28u&dl=1" alt="Imagen 3">
         </div>
@@ -172,33 +172,51 @@ desde que hablo contigo , estoy más feli poque me haces sentir feliz JAJAJAJA A
         <p>Te amo mucho.</p>
     </footer>
 
-    <!-- Modal de contraseña -->
-    <div id="password-modal">
-        <div id="password-modal-content">
-            <p>Convenceme JAJJAJA:</p>
-            <input type="password" id="password-input" placeholder="Contraseña">
-            <button onclick="checkPassword()">Enviar</button>
+    <!-- Modal de problema matemático -->
+    <div id="math-modal">
+        <div id="math-modal-content">
+            <p>Problema:</p>
+            <p>En una tienda, un libro cuesta $12 y un cuaderno cuesta $4. Si compras 3 libros y 5 cuadernos, ¿cuánto gastarás en total? Además, si pagas con un billete de $100, ¿cuánto dinero te devolverán?</p>
+            <input type="text" id="math-answer" placeholder="Escribe tu respuesta">
+            <button onclick="checkMathAnswer()">Enviar</button>
         </div>
     </div>
 
     <script>
-        function openPasswordModal() {
-            document.getElementById('password-modal').style.display = 'flex';
+        function openMathModal() {
+            document.getElementById('math-modal').style.display = 'flex';
         }
 
-        function checkPassword() {
-            const input = document.getElementById('password-input').value;
-            if (input === 'te amo') {
-                location.href = 'sekretoso.html';
+        function checkMathAnswer() {
+            const userAnswer = document.getElementById('math-answer').value.trim().toLowerCase();
+            
+            // Expresiones regulares para diferentes formas correctas
+            const correctAnswers = [
+                /gastarás\s*\$56\s*en\s*total\s*y\s*te\s*devolverán\s*\$44/i,
+                /\b56\s*y\s*44\b/i,
+                /\$56\s*y\s*\$44\b/i,
+                /\b44\s*y\s*56\b/i,
+                /56\s*[\s.,]*y\s*44/i,
+                /\b44\s*[\s.,]*y\s*56\b/i,
+                /total\s*56\s*devolverán\s*44/i,
+                /56\s*total\s*44/i
+            ];
+
+            // Verificar si la respuesta del usuario coincide con alguna expresión correcta
+            const isCorrect = correctAnswers.some(regex => regex.test(userAnswer));
+            
+            if (isCorrect) {
+                document.getElementById('math-modal').style.display = 'none';
+                location.href = 'sekretoso.html'; // Cambia la URL según sea necesario
             } else {
-                alert('Contraseña incorrecta. Inténtalo de nuevo.');
+                alert('Respuesta incorrecta. Inténtalo de nuevo.');
             }
         }
 
         // Cerrar modal al hacer clic fuera del contenido
         window.onclick = function(event) {
-            if (event.target === document.getElementById('password-modal')) {
-                document.getElementById('password-modal').style.display = 'none';
+            if (event.target === document.getElementById('math-modal')) {
+                document.getElementById('math-modal').style.display = 'none';
             }
         }
     </script>
